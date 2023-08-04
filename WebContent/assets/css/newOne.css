@@ -1,0 +1,42 @@
+html,body {
+  margin: 0;
+}
+.panel-news-container {
+  margin-bottom: -16px;
+}
+.panel-news-title {
+  cursor: pointer;
+  height: 30px;
+  text-align:left;
+  text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width:90%; /* 모바일 레이아웃도 손볼 필요 */
+
+}
+.panel-news-answer {
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+  text-align:left;
+}
+#btn-all-close {
+  margin-bottom: 10px;
+  background-color: #726996;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 25px;
+  float: right;
+}
+#btn-all-close:hover {
+  background-color: green;
+  color: #000;
+  transition: all 0.35s;
+}
+.active2 {
+  display: block;
+  /* 높이를 정해줘야지만 transition이 적용됨 */
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+ }
