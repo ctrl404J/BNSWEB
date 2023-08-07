@@ -465,7 +465,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-9 col-lg-2" >
+				<div class="col-xl-9 col-lg-8" >
 					<div class="ud-contact-form-wrapper wow fadeInUp"
 						data-wow-delay=".2s" id="writeInfo" style="width:70%;">
 						<h3 class="ud-contact-form-title">求職者登録</h3>
