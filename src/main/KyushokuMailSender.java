@@ -57,30 +57,30 @@ public class KyushokuMailSender extends HttpServlet {
 		String toName = "BNS-SYSTEM";         // 구글 메일에서 답장받는 나를 대표
 		String toEmail = "jung@bns-system.com"; // 구글 메일에서 답장받는 나를 대표(bns)
 
-		String subject = "ホームページから求職者登録メールが届きました。";
-		String debugMode = "false"; // 메일 발송과정을 콘솔로 보여줌
-		String authMode = "true"; // stmp쪽 gmail계정을 인증하는 것으로 추정.
 
-		// select 요소의 이름인 "yourJob"으로부터 선택된 옵션들을 배열로 받습니다.
+		String subject = "ホームページから求職者登録メールが届きました。";
+		String debugMode = "false";
+		String authMode = "true";
+
 		String[] yourJobs = request.getParameterValues("yourJobs[]");
 
-		String yourName = request.getParameter("yourName"); // 현재 보내는 사람 이름
+		String yourName = request.getParameter("yourName");
 		String yourKanaName = request.getParameter("yourKanaName");
 		String yourBirthday = request.getParameter("yourBirthday");
 		String yourZip = request.getParameter("yourZip");
 		String yourAddress = request.getParameter("yourAddress");
 		String yourPhone = request.getParameter("yourPhone");
-		String yourEmail = request.getParameter("yourEmail"); // 현재 보내는 사람 메일
+		String yourEmail = request.getParameter("yourEmail");
 		String yourGraduate = request.getParameter("yourGraduate");
 		String yourGraduate2 = request.getParameter("yourGraduate2");
 		String yourLicense = request.getParameter("yourLicense");
 		String yourSkill = request.getParameter("yourSkill");
 
 
-		Part yourSheetFile = request.getPart("yourSheetFile"); // 클라이언트로부터 "file" 파라미터를 통해 업로드된 파일 정보를 가져옵니다.
-        String fileName = yourSheetFile.getSubmittedFileName(); // 파일 이름을 가져옵니다.
-        InputStream fileContent = yourSheetFile.getInputStream(); // 파일의 내용을 읽기 위해 InputStream을 가져옵니다.
-        byte[] fileData = fileContent.readAllBytes(); // 파일 내용을 byte 배열로 읽어옵니다.
+		Part yourSheetFile = request.getPart("yourSheetFile");
+        String fileName = yourSheetFile.getSubmittedFileName();
+        InputStream fileContent = yourSheetFile.getInputStream();
+        byte[] fileData = fileContent.readAllBytes();
 
 		try {
 
@@ -97,18 +97,16 @@ public class KyushokuMailSender extends HttpServlet {
 //			properties.put("mail.smtp.timeout", "5000");
 			properties.put("mail.smtp.auth", authMode);
 
-			//Session msgSession = null;
 
 		    Session session = Session.getInstance(properties, new Authenticator() {
 
 		    	@Override
 		    	protected PasswordAuthentication getPasswordAuthentication() {
-		    		return new PasswordAuthentication(myAccountEmail, myAccountPass); // 새로운 인증을 받고 반환
+		    		return new PasswordAuthentication(myAccountEmail, myAccountPass);
 		    	}
 
 			});
 
-		    // 관리자 g메일 인증 메소드.(API로 인증 하는데 실행 클래스는 따로 작성해준 경우다.)
 			if(authMode.equals("true")) {
 
 		        Authenticator auth = new MyAuthentication(myAccountEmail, myAccountPass);
@@ -127,13 +125,11 @@ public class KyushokuMailSender extends HttpServlet {
 
 			String encodedFromName = MimeUtility.encodeText(yourName, "UTF-8", "B");
 
-			// 발신자 이름과 이메일 주소를 조합하여 InternetAddress를 생성합니다.
 			msg.setFrom(new InternetAddress(encodedFromName, yourEmail));
 			msg.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail ,toName));
 			msg.setSubject(subject);
 
 			MimeBodyPart htmlPart = new MimeBodyPart();
-			// ----------------- 메일 본문.
 			String htmlContent = "<html><body>" +
 			        "<h1>" + subject + "</h1>" +
 			        "<p>名前: " + yourName + "</p>" +
@@ -156,7 +152,6 @@ public class KyushokuMailSender extends HttpServlet {
 			        "<p>職務経歴･スキル: " + yourSkill + "</p>" +
 			        "</body></html>";
 
-			// --------------------------
 			htmlPart.setContent(htmlContent, "text/html; charset=utf-8");
 
 			MimeBodyPart filePart = new MimeBodyPart();

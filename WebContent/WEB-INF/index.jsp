@@ -480,19 +480,18 @@
 										multiple class="form-control wpcf7-form-control wpcf7-select"
 										aria-invalid="false" id="FormControlSelect2" name="yourJobs[]"
 										style="width: 50%;">
-										<option value="システムエンジニア">システムエンジニア</option>
-										<option value="ネットワークエンジニア">ネットワークエンジニア</option>
-										<option value="データベースエンジニア">データベースエンジニア</option>
-										<option value="ヘルプデスク">ヘルプデスク</option>
-										<option value="CADオパレーター">CADオパレーター</option>
-										<option value="機械設計">機械設計</option>
-										<option value="電気･電子設計">電気･電子設計</option>
-										<option value="制御ソフト開発">制御ソフト開発</option>
-										<option value="CAE">制御ソフト開発</option>
-										<option value="営業">営業</option>
-										<option value="制御ソフト開発">制御ソフト開発</option>
-										<option value="Web開発">Web開発</option>
-										<option value="その他">その他</option>
+								         <option value="システムエンジニア">システムエンジニア</option>
+								         <option value="ネットワークエンジニア">ネットワークエンジニア</option>
+								         <option value="データベースエンジニア">データベースエンジニア</option>
+								         <option value="ヘルプデスク">ヘルプデスク</option>
+								         <option value="CADオパレーター">CADオパレーター</option>
+								         <option value="機械設計">機械設計</option>
+								         <option value="電気･電子設計">電気･電子設計</option>
+								         <option value="制御ソフト開発">制御ソフト開発</option>
+								         <option value="CAE">CAE</option>
+								         <option value="営業">営業</option>
+								         <option value="Web開発">Web開発</option>
+								         <option value="その他">その他</option>
 									</select>
 								</div>
 								<br>

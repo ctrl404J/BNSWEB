@@ -50,8 +50,10 @@ public class MailSender extends HttpServlet {
 		String toName = "BNS-SYSTEM"; // 구글 메일에서 답장받는 나를 대표
 		String toEmail = "jung@bns-system.com"; // 구글 메일에서 답장받는 나를 대표(bns)
 
-		String fromName = request.getParameter("fromName"); // 현재 보내는 사람 이름
-		String fromEmail = request.getParameter("fromEmail"); // 현재 보내는 사람 메일
+
+
+		String fromName = request.getParameter("fromName");
+		String fromEmail = request.getParameter("fromEmail");
 		String subject = request.getParameter("subject");
 		String detail = request.getParameter("detail");
 		String debugMode = "false";
