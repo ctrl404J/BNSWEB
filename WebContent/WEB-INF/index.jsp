@@ -95,12 +95,16 @@
 						<br> <br> <br> <br> <br>
 					</div>
 					<br> <br>
+					<!-- 맨위 hero 점박이 이미지 -->
+					<!--
 					<div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
 						<img src="assets/images/hero/dotted-shape.svg" alt="shape"
 							class="shape shape-1" /> <img
 							src="assets/images/hero/dotted-shape.svg" alt="shape"
 							class="shape shape-2" />
 					</div>
+					 -->
+					<!-- 맨위 hero 점박이 이미지 -->
 				</div>
 			</div>
 		</div>
@@ -113,6 +117,7 @@
 		<div class="container">
 			<h3 style="text-align: center; padding-top: 50px;">News</h3>
 			<br>
+			<div class="table-responsive">
 			<table class="table table-hover" style="width: 80%; margin: auto;">
 				<caption style="text-align: right;">
 					<button type="button" class="btn btn-outline-dark hidden"
@@ -136,6 +141,7 @@
 					</tr>
 				</tbody>
 			</table>
+			</div>
 		</div>
 	</section>
 	<!-- ====== News End ====== -->
@@ -163,13 +169,16 @@
 						<p>代表取締役 高 柄華</p>
 					</div>
 				</div>
-				<div class="ud-about-image" style="width: 490;">
+				<div class="ud-about-image">
 					<img src="assets/images/new/paul-calescu-KW3m50XRhjk-unsplash.jpg"
 						width="100%" height="750" alt="about-image" />
 				</div>
 			</div>
+	</div>
+	</section>
 
-			<br> <br>
+	<section id="about" class="ud-about">
+		<div class="container">
 			<div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
 
 				<div class="ud-about-image">
@@ -735,7 +744,7 @@
 		</div>
 		<div style="margin-bottom: 5%;">
 			<div style="float: left; margin-left: 15%;">
-				<a href="index.html" class="ud-footer-logo"> <img
+				<a href="#home" class="ud-footer-logo"> <img
 					src="assets/images/logo/logo.svg" alt="logo" />
 				</a>
 			</div>

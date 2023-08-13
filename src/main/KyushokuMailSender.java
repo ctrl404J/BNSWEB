@@ -124,10 +124,11 @@ public class KyushokuMailSender extends HttpServlet {
 			MimeMessage msg = new MimeMessage(session);
 
 			String encodedFromName = MimeUtility.encodeText(yourName, "UTF-8", "B");
+			String encodedSubject = MimeUtility.encodeText(subject, "UTF-8", "B");
 
 			msg.setFrom(new InternetAddress(encodedFromName, yourEmail));
 			msg.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail ,toName));
-			msg.setSubject(subject);
+			msg.setSubject(encodedSubject);
 
 			MimeBodyPart htmlPart = new MimeBodyPart();
 			String htmlContent = "<html><body>" +

@@ -97,11 +97,12 @@ public class MailSender extends HttpServlet {
 
 			session.setDebug(debug);
 			String encodedFromName = MimeUtility.encodeText(fromName, "UTF-8", "B");
+			String encodedSubject = MimeUtility.encodeText(subject, "UTF-8", "B");
 			MimeMessage msg = new MimeMessage(session);
 
 			msg.setFrom(new InternetAddress(encodedFromName, fromEmail));
 			msg.setRecipient(Message.RecipientType.TO, new InternetAddress(toEmail, toName));
-			msg.setSubject(subject);
+			msg.setSubject(encodedSubject);
 			msg.setContent(detail, "text/html; charset=utf-8");
 
 			Transport t = session.getTransport(mailProtocol);
